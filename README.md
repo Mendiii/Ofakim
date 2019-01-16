@@ -1,6 +1,3 @@
-מצורף גם קובץ הדאטה-בייס
-חשוב לא לשכוח לשנות את ה
-CONNECTION_STRING 
-ב
-WEB.CONFIG
-תודה.
+DataBase file attached.
+DO NOT FORGET!!! change the connection string in webConfig after you set the MDF file.
+thank you.
