@@ -1,0 +1,26 @@
+﻿@model System.Data.DataTable
+
+@{
+    ViewBag.Title = "UsersList";
+}
+
+<h1>Users List</h1>  <input type="button" class="btn btn-primary" value="To User Registration" onclick="window.location.href ='/Home/UserRegistration'" />
+<br /> <br />
+<table class="table">
+    <tr>
+        <th>Mail Address</th>
+        <th>birth Date</th>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+    </tr>
+    @foreach (System.Data.DataRow dr in Model.Rows)
+    {
+        <tr>
+            @foreach (System.Data.DataColumn col in Model.Columns)
+            {
+                <td>@dr[col.ColumnName].ToString()</td>
+            }
+        </tr>
+    }
+</table>

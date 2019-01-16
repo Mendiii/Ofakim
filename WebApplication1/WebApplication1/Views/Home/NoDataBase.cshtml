@@ -1,0 +1,40 @@
+﻿@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+            debugger;
+            var users = localStorage.getItem('itemsArray');
+            var users1 = JSON.parse(users);
+            var tbl = $("<table/>").attr("id", "t");
+            $("#div1").append(tbl);
+            for (var i = 0; i < users1 .length; i++) {
+                var tr = "<tr>";
+                var td1 = "<td>" + users1[i]["MailAddress"] + "</td>";
+                var td2 = "<td>" + users1[i]["birthDate"] + "</td>";
+                var td3 = "<td>" + users1[i]["FullName"] + "</td>";
+                var td4 = "<td>" + users1[i]["PhoneNumber"] + "</td>";
+                var td5 = "<td>" + users1[i]["Gender"] + "</td></tr>";
+
+                $("#t").append(tr + td1 + td2 + td3 + td4 + td5);
+            }
+
+        });
+
+    </script>
+}
+@{
+    ViewBag.Title = "NoDataBase";
+}
+
+<h1>No Data Base</h1>
+<input type="button" class="btn btn-primary" value="To User Registration" onclick="window.location.href ='/Home/UserRegistration'" />
+<br /> <br />
+<table id="t" class="table">
+    <tr>
+        <th>Mail Address</th>
+        <th>birth Date</th>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+    </tr>
+</table>
